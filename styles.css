@@ -1,0 +1,9 @@
+* {
+  margin:0;
+  padding: 0;
+}
+
+div.card img.img {
+  width: 150px;
+  border: 1px solid black;
+}

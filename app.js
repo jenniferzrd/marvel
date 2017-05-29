@@ -16,22 +16,22 @@ var app = (function app() {
 var links = (function getLinks() {
   var str = "";
   function createLinks(url, cls) {
-    return '<a href="${url}" class="icon ${cls}" target="_blank"></a>';
+    return `<a href="${url}" class="icon ${cls}" target="_blank"></a>`;
   }
   data.urls.forEach(function parse(u) {
 
 if (u.type === "detail") {
-    str += '<a href="${u.url}" class="icon fa fa-info-circle" target="_blank"></a>';
+    str += `<a href="${u.url}" class="icon fa fa-info-circle" target="_blank"></a>`;
 } else if (u.type === "wiki"){
-    str += '<a href="${u.url}" class="icon fa fa-wikipedia-w" target="_blank"></a>';
+    str += `<a href="u.url" class="icon fa fa-wikipedia-w" target="_blank"></a>`;
 } else if (u.type === "comicLink"){
-  str += '<a href="${u.url}" class="icon fa fa-info-circle" target="_blank"></a>';
+  str += `<a href="${u.url}" class="icon fa fa-info-circle" target="_blank"></a>`;
 }
 });
 return str;
 }());
-  return '<div class=\"card\">card<input type="hidden" value="${data.id}"><h3 class=\"title\">${data.name}</h3><img class="img" src="${data.thumbnail.path}.${data.thumbnail.extension}"></div><div class="links">$.{links}</a></div>';
-
+  return `<div class=\"card\">card<input type="hidden" value="${data.id}">` +`<h3 class=\"title\">${data.name}</h3>`+`<img class="img" src="${data.thumbnail.path}.${data.thumbnail.extension}"></div>`+ `<div class="links">${links}</a></div>`;
+// return '<h3 class=\"title\">' + data.name + '</h3>' + '<input type="hidden" value='+ '"' + data.id + '">' + '<img class="img" src="' + data.thumbnail.path + data.thumbnail.extension +'">' + '<div class="links">' + data.links + '</div>';
      };
 
      displayData = function displayData(dataSet){
